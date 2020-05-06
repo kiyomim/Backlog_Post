@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{{ name }}</title>
+    </head>
+    <body>
+    {% if name == "kiyomi" %}
+    <h1>じゃんじゃか{{ name }}</h1>
+    {% elif name %}
+    <h1>じゃん{{name}}</h1>
+    {% else %}
+    <h1>ジャジャーン</h1>
+    {% endif %}
+    <form action="/index" method="POST">
+        <input type="text" name="name" placeholder="Enter name">
+        <input type="submit" value="Submit">
+    </form>
+    <img src="/static/images/cat.jpg" alt="猫">
+    {% for word in iro %}
+    <p>{{ word }}</p>
+    {% endfor %}
+    </body>
+</html>
