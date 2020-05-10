@@ -6,21 +6,36 @@
     </head>
     <body>
     {% if name == "kiyomi" %}
-    <h1>じゃんじゃか{{ name }}</h1>
+    <h1>スペシャル{{ name }}</h1>
     {% elif name %}
-    <h1>じゃん{{name}}</h1>
+    <h1>普通{{name}}</h1>
     {% else %}
-    <h1>ジャジャーン</h1>
+    <h1>普通のした</h1>
     {% endif %}
     <form action="/index" method="POST">
         <input type="text" name="name" placeholder="Enter name">
         <input type="submit" value="Submit">
     </form>
+
     <img src="/static/images/cat.jpg" alt="猫">
 
-    {% for onegai in all_onegai %}
-    <p>{{onegai.title}}:{{onegai.body}}({{onegai.date}})</p>
-    {% endfor %}
-
+    <form action="/add" method="post">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="body" placeholder="body">
+        <input type="submit" value="Add">
+    </form>
+    
+    <form action="/update" method="post">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="body" placeholder="body">
+        <input type="submit" value="Update">
+        {% for onegai in all_onegai %}
+            <div>
+                <input type="radio" name="update" value={{onegai.id}}>
+                {{onegai.title}}：{{onegai.body}}（{{onegai.date}}）
+                </input>
+            </div>
+        {% endfor %}
+    </form>
     </body>
 </html>
