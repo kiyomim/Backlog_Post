@@ -17,8 +17,10 @@
         <input type="submit" value="Submit">
     </form>
     <img src="/static/images/cat.jpg" alt="猫">
-    {% for word in iro %}
-    <p>{{ word }}</p>
+
+    {% for onegai in all_onegai %}
+    <p>{{onegai.title}}:{{onegai.body}}({{onegai.date}})</p>
     {% endfor %}
+
     </body>
 </html>
