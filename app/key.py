@@ -1,0 +1,2 @@
+SECRET_KEY = "secretkey8888"
+SALT = "SALTisSUGAR9988"
