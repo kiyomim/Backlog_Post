@@ -9,14 +9,12 @@
 
     <body>
     {% if name == "kiyomi" %}
-    <h1>スペシャル{{ name }}</h1>
+    <h1>ハロー{{ name }}</h1>
     {% elif name %}
-    <h1>普通{{name}}</h1>
+    <h1>こんにちは{{name}}</h1>
     {% else %}
-    <h1>普通のした</h1>
+    <h1>名無し。</h1>
     {% endif %}
-
-    <img src="/static/images/cat.jpg" alt="猫">
 
     <form action="/add" method="post">
         <input type="text" name="title" placeholder="title">

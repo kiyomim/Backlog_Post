@@ -92,12 +92,13 @@ def logout():
     return redirect(url_for("top", status="logout"))
 
 
+# トップ画面
 @app.route("/top")
 def top():
     status = request.args.get("status")
     return render_template("top.html", status=status)
 
-
+# 新規登録
 @app.route("/newcomer")
 def newcomer():
     status = request.args.get("status")
